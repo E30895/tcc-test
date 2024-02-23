@@ -16,13 +16,7 @@ import WebScraping
 import Tratamento
 import SentimentAnalysis
 
-q = 'Agronegócio'
-#dataset_text = pd.read_excel(r'C:\Users\eusou\OneDrive\Documentos\TCC\08. G1 Dataset\3.noticicas_tratadas_agronegocio.xlsx')
-#noticias_tratadas = Tratamento.tratamento(dataset_text, q)
-noticias_tratadas = pd.read_excel(r'C:\Users\eusou\OneDrive\Documentos\TCC\08. G1 Dataset\3.noticicas_tratadas_agronegocio.xlsx')
-tokens = SentimentAnalysis.init_token(noticias_tratadas)
-sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
-sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
+
 
 
 def g1_agronegocio():
