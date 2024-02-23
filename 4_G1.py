@@ -17,6 +17,13 @@ import Tratamento
 import SentimentAnalysis
 
 
+q = 'Agronegócio'
+#dataset_text = pd.read_excel(r'C:\Users\eusou\OneDrive\Documentos\TCC\08. G1 Dataset\3.noticicas_tratadas_agronegocio.xlsx')
+#noticias_tratadas = Tratamento.tratamento(dataset_text, q)
+noticias_tratadas = pd.read_excel(r'C:\Users\eusou\OneDrive\Documentos\TCC\08. G1 Dataset\3.noticicas_tratadas_agronegocio.xlsx')
+tokens = SentimentAnalysis.init_token(noticias_tratadas)
+sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
+sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
 
 
 def g1_agronegocio():
@@ -25,6 +32,8 @@ def g1_agronegocio():
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
     tokens = SentimentAnalysis.init_token(noticias_tratadas)
     sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
+    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
+
     return sentiment_analysis_pt
 
 
@@ -37,6 +46,8 @@ def g1_industria():
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
     tokens = SentimentAnalysis.init_token(noticias_tratadas,q)
     sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
+    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
+
     return sentiment_analysis_pt
 
 
@@ -50,6 +61,8 @@ def g1_mercado_trabalho():
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
     tokens = SentimentAnalysis.init_token(noticias_tratadas,q)
     sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
+    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
+
     return sentiment_analysis_pt
 
 
@@ -62,6 +75,8 @@ def g1_mercado_financeiro():
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
     tokens = SentimentAnalysis.init_token(noticias_tratadas,q)
     sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
+    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
+
     return sentiment_analysis_pt
 
 
@@ -73,4 +88,6 @@ def g1_servicos():
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
     tokens = SentimentAnalysis.init_token(noticias_tratadas,q)
     sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
+    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
+
     return sentiment_analysis_pt
