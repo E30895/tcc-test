@@ -77,7 +77,7 @@ def initialize_g1(start: str, source: str, q):
   days = all_days_since(start)
 
   for i, day in enumerate(days):
-    dataset.to_excel('dataset_agro bkp.xlsx', encoding='latin-1', index=False) if i % 7 == 0 else None
+    dataset.to_excel(f'dataset_{q}_bkp.xlsx', encoding='latin-1', index=False) if i % 7 == 0 else None
     print(day)
 
     try:
