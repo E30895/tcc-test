@@ -1,1 +1,3 @@
+# Esclarecimentos
 
+Os datasets são pesados para adicionar no github. Os mesmos podem ser encontrados em:
