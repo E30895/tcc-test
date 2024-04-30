@@ -1,5 +1,3 @@
-
-
 library(tidyverse)
 library(textdata)
 library(lubridate)
