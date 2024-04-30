@@ -22,13 +22,8 @@ def g1_agronegocio():
     dataset,q = WebScraping.initialize_g1(start='2012-01-01', q = 'Agronegócio', source= 'g1')
     dataset_text = WebScraping.get_http_text(dataset,q)
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
-    tokens = SentimentAnalysis.init_token(noticias_tratadas)
-    sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
-    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
 
-    return sentiment_analysis_pt
-
-
+    return noticias_tratadas
 
 
 
@@ -36,14 +31,8 @@ def g1_industria():
     dataset, q = WebScraping.initialize_g1(start='2012-01-01', q = 'Indústria', source= 'g1')
     dataset_text = WebScraping.get_http_text(dataset,q)
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
-    tokens = SentimentAnalysis.init_token(noticias_tratadas,q)
-    sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
-    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
 
-    return sentiment_analysis_pt
-
-
-
+    return noticias_tratadas
 
 
 
@@ -51,13 +40,8 @@ def g1_mercado_trabalho():
     dataset,q = WebScraping.initialize_g1(start='2012-01-01', q = 'Mercado de Trabalho', source= 'g1')
     dataset_text = WebScraping.get_http_text(dataset,q)
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
-    tokens = SentimentAnalysis.init_token(noticias_tratadas,q)
-    sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
-    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
 
-    return sentiment_analysis_pt
-
-
+    return noticias_tratadas
 
 
 
@@ -65,12 +49,8 @@ def g1_mercado_financeiro():
     dataset,q = WebScraping.initialize_g1(start='2012-01-01', q = 'Mercado Financeiro', source= 'g1')
     dataset_text = WebScraping.get_http_text(dataset,q)
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
-    tokens = SentimentAnalysis.init_token(noticias_tratadas,q)
-    sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
-    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
 
-    return sentiment_analysis_pt
-
+    return noticias_tratadas
 
 
 
@@ -78,8 +58,5 @@ def g1_servicos():
     dataset,q = WebScraping.initialize_g1(start='2012-01-01', q = 'Serviços', source= 'g1')
     dataset_text = WebScraping.get_http_text(dataset,q)
     noticias_tratadas = Tratamento.tratamento(dataset_text, q)
-    tokens = SentimentAnalysis.init_token(noticias_tratadas,q)
-    sentiment_analysis_pt = SentimentAnalysis.sentiment_analysis_br(tokens, q)
-    sentiment_analysis_pt = SentimentAnalysis.normalize_sentiment(sentiment_analysis_pt, q)
 
-    return sentiment_analysis_pt
+    return noticias_tratadas
