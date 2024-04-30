@@ -14,6 +14,8 @@ get_stationarity = function(dataset){
   
   Parametros: dataset
   "
+  
+  dataset = dataset[-c(1)]
 
   results = list()
   suport_df = data.frame(Serie = character(), ndiffs = integer())
@@ -23,7 +25,7 @@ get_stationarity = function(dataset){
     serie = dataset[[col_name]]
     
     #Realizando o teste ADF (Questionar ao Hudson)
-    adf_test = forecast::ndiffs(serie, alpha = 0.05, test = 'adf')
+    adf_test = forecast::ndiffs(serie, alpha = 0.05, test = 'adf', type = 'level')
     
     temp_df = data.frame(Serie = col_name, ndiffs = adf_test)
     suport_df = rbind(suport_df, temp_df)
