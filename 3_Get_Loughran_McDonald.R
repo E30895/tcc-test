@@ -7,6 +7,19 @@ library(sentometrics)
 
 get_Loughran_McDonald = function(){
   
+  #' Obter Dicionário de Loughran-McDonald
+  #'
+  #' Esta função retorna o dicionário de Loughran-McDonald contendo termos relacionados à incerteza.
+  #'
+  #' @return Um conjunto de dados contendo o dicionário de Loughran-McDonald para termos relacionados à incerteza.
+  #' @examples
+  #' get_Loughran_McDonald()
+  #'
+  #' @importFrom textdata lexicon_loughran
+  #' @importFrom dplyr mutate group_by distinct ungroup filter
+  #' @importFrom tm stemDocument
+  #' @export
+  
   dicionario = textdata::lexicon_loughran() %>% 
     dplyr::mutate(
       token = tm::stemDocument(x = word, language = "english"),
@@ -22,6 +35,19 @@ get_Loughran_McDonald = function(){
 }
 
 get_tepu_dict = function(){
+  
+  #' Obter Dicionário TEPUs
+  #'
+  #' Esta função retorna um dicionário contendo termos relacionados à incerteza (U) e termos políticos (P).
+  #'
+  #' @return Um conjunto de dados contendo o dicionário TEPUs.
+  #' @examples
+  #' get_tepu_dict()
+  #'
+  #' @importFrom dplyr mutate rbind
+  #' @importFrom base rbind tolower
+  #' @export
+  
   
   U = get_Loughran_McDonald()[1:84,]
   U$sentimento = 'U'
